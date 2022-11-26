@@ -59,7 +59,7 @@ namespace GIBDDDatebase
 
                     await db.SaveChangesAsync();
 
-                    Console.WriteLine("������ ������� ���������");
+                    Console.WriteLine("Новый водитель успешно добавлен");
                 }
             }
             catch (Exception ex)
@@ -73,6 +73,47 @@ namespace GIBDDDatebase
         private void SupervisorView_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        #region DL
+        private async void button3_Click(object sender, EventArgs e)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                var dl = await db.DriverLicences
+                    .Include(u => u.Driver)
+                    .ToListAsync();
+
+                dataGridView2.Rows.Clear();
+
+                foreach (var u in dl)
+                {
+                    string[] row =
+                    {
+                        $"{u.Id}", $"{string.Join(' ',  u.Driver.Surname,  u.Driver.Name,u.Driver.Patronymic)}",
+                        $"{u.Driver.BirthTown}", $"{u.StartDate}",
+                        $"{u.EndDate}", $"{u.IssuerName}",
+                        $"{u.RegionNum}"
+                    };
+                    dataGridView2.Rows.Add(row);
+                }
+            }
+        }
+        #endregion
+
+        private async void GetCars_Click(object sender, EventArgs e)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                var cars = await db.TransportVehicle.ToListAsync();
+
+                foreach (var car in cars)
+                {
+                    string[] row = { $"{car.Id}", $"{car.Model}", $"{car.Color}", $"{car.LicencePlate}", $"{car.EngineVolume}", $"{car.ReleaseYear}" };
+
+                    carsDataView.Rows.Add(row);
+                }
+            }
         }
     }
 }

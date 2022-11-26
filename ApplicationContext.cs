@@ -12,6 +12,7 @@ namespace GIBDDDatebase
         public DbSet<InsurancePolicy> InsurancePolicies { get; set; } = null!;
         public DbSet<Incident> Incidents { get; set; } = null!;
         public DbSet<Violation> Violations { get; set; } = null!;
+        public DbSet<TransportVehicle> TransportVehicle { get; set; } = null!;
 
         public ApplicationContext()
         {

@@ -15,24 +15,24 @@ namespace GIBDDDatebase.Models
         /// <summary>
         /// Идентификатор водителя
         /// </summary>
-        public int DriverId { get; set; }
+        public int? DriverId { get; set; }
 
         /// <summary>
         /// Водитель
         /// </summary>
         [ForeignKey("DriverId")]
-        public Driver Driver { get; set; }
+        public Driver? Driver { get; set; }
 
         /// <summary>
         /// Идентификатор транспортного средства
         /// </summary>
-        public int TransportVehicleId { get; set; }
+        public int? TransportVehicleId { get; set; }
 
         /// <summary>
         /// Транспортное средство
         /// </summary>
         [ForeignKey("TransportVehicleId")]
-        public TransportVehicle TransportVehicle { get; set; }
+        public TransportVehicle? TransportVehicle { get; set; }
 
         /// <summary>
         /// Идентификатор нарушения
@@ -49,6 +49,11 @@ namespace GIBDDDatebase.Models
         /// Дата нарушения
         /// </summary>
         public DateTime Date { get; set; }
+
+        /// <summary>
+        /// Дата погашения
+        /// </summary>
+        public DateTime? RepaymentDate { get; set; }
 
         /// <summary>
         /// Описание

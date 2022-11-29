@@ -107,11 +107,48 @@ namespace GIBDDDatebase
             {
                 var cars = await db.TransportVehicle.ToListAsync();
 
+                carsDataView.Rows.Clear();
+
                 foreach (var car in cars)
                 {
-                    string[] row = { $"{car.Id}", $"{car.Model}", $"{car.Color}", $"{car.LicencePlate}", $"{car.EngineVolume}", $"{car.ReleaseYear}" };
+                    string[] row = { 
+                        $"{car.Id}",
+                        $"{car.Model}",
+                        $"{car.Color}",
+                        $"{car.LicencePlate}",
+                        $"{car.EngineVolume}", 
+                        $"{car.ReleaseYear}" 
+                    };
 
                     carsDataView.Rows.Add(row);
+                }
+            }
+        }
+
+        private async void button4_Click(object sender, EventArgs e)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                var incidents = await db.Incidents
+                    .Include(x => x.TransportVehicle)
+                    .Include(x => x.Driver)
+                    .Include(x => x.Violation)
+                    .Where(x => x.RepaymentDate == DateTime.MinValue)
+                    .ToListAsync();
+
+                violationsGrid.Rows.Clear();
+
+                foreach (var inc in incidents)
+                {
+                    string[] row = { 
+                        $"{string.Join(' ', inc.Driver.Surname, inc.Driver.Name, inc.Driver.Patronymic)}",
+                        $"{inc.TransportVehicle.LicencePlate}", 
+                        $"{inc.Date}",
+                        $"{inc.Violation.Name}",
+                        $"{inc.Description}"
+                    };
+
+                    violationsGrid.Rows.Add(row);
                 }
             }
         }

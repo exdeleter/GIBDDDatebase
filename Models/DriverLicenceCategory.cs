@@ -22,8 +22,24 @@ namespace GIBDDDatebase.Models
         public DriverLicence DriverLicence { get; set; }
 
         /// <summary>
-        /// Наименование категории
+        /// Дата начала действия
         /// </summary>
-        public string Name { get; set; }
+        public DateTime StartDate { get; set; }
+
+        /// <summary>
+        /// Дата окончания действия
+        /// </summary>
+        public DateTime EndDate { get; set;}
+
+        /// <summary>
+        /// Идентификатор категории ВП
+        /// </summary>
+        public int CategoryId { get; set; }
+
+        /// <summary>
+        /// Категория
+        /// </summary>
+        [ForeignKey("DriverLicenceId")]
+        public Category Category { get; set; }
     }
 }

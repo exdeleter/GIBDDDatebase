@@ -3,6 +3,7 @@ using System;
 using GIBDDDatebase;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace GIBDDDatebase.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20221129113841_addRepaymentDate")]
+    partial class addRepaymentDate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -144,13 +147,10 @@ namespace GIBDDDatebase.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int?>("DriverId")
+                    b.Property<int>("DriverId")
                         .HasColumnType("integer");
 
-                    b.Property<DateTime?>("RepaymentDate")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<int?>("TransportVehicleId")
+                    b.Property<int>("TransportVehicleId")
                         .HasColumnType("integer");
 
                     b.Property<int>("ViolationId")
@@ -313,11 +313,15 @@ namespace GIBDDDatebase.Migrations
                 {
                     b.HasOne("GIBDDDatebase.Models.Driver", "Driver")
                         .WithMany()
-                        .HasForeignKey("DriverId");
+                        .HasForeignKey("DriverId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("GIBDDDatebase.Models.TransportVehicle", "TransportVehicle")
                         .WithMany()
-                        .HasForeignKey("TransportVehicleId");
+                        .HasForeignKey("TransportVehicleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("GIBDDDatebase.Models.Violation", "Violation")
                         .WithMany()

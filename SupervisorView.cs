@@ -152,5 +152,11 @@ namespace GIBDDDatebase
                 }
             }
         }
+
+        private void OpenFormAddDriverLicence(object sender, EventArgs e)
+        {
+            LicenceForm form = new LicenceForm();
+            form.ShowDialog();
+        }
     }
 }

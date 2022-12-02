@@ -39,9 +39,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SupervisorView));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.seriesNumberRadio = new System.Windows.Forms.RadioButton();
+            this.birthTownRadio = new System.Windows.Forms.RadioButton();
+            this.patronymicRadio = new System.Windows.Forms.RadioButton();
+            this.nameRadio = new System.Windows.Forms.RadioButton();
+            this.surnameRadio = new System.Windows.Forms.RadioButton();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,11 +54,10 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,9 +87,9 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.button5 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -114,13 +118,10 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.textBox4);
-            this.tabPage1.Controls.Add(this.textBox3);
-            this.tabPage1.Controls.Add(this.dateTimePicker1);
-            this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Controls.Add(this.textBox2);
+            this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.textBox1);
-            this.tabPage1.Controls.Add(this.button2);
+            this.tabPage1.Controls.Add(this.button6);
+            this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
@@ -130,28 +131,94 @@
             this.tabPage1.Text = "Водители";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // groupBox1
             // 
-            this.textBox4.Location = new System.Drawing.Point(268, 39);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(125, 27);
-            this.textBox4.TabIndex = 18;
-            this.textBox4.Text = "Место рождения";
+            this.groupBox1.Controls.Add(this.seriesNumberRadio);
+            this.groupBox1.Controls.Add(this.birthTownRadio);
+            this.groupBox1.Controls.Add(this.patronymicRadio);
+            this.groupBox1.Controls.Add(this.nameRadio);
+            this.groupBox1.Controls.Add(this.surnameRadio);
+            this.groupBox1.Location = new System.Drawing.Point(466, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(350, 94);
+            this.groupBox1.TabIndex = 23;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Параметры поиска";
             // 
-            // textBox3
+            // seriesNumberRadio
             // 
-            this.textBox3.Location = new System.Drawing.Point(268, 8);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(125, 27);
-            this.textBox3.TabIndex = 17;
-            this.textBox3.Text = "Отчество";
+            this.seriesNumberRadio.AutoSize = true;
+            this.seriesNumberRadio.Location = new System.Drawing.Point(209, 22);
+            this.seriesNumberRadio.Name = "seriesNumberRadio";
+            this.seriesNumberRadio.Size = new System.Drawing.Size(136, 24);
+            this.seriesNumberRadio.TabIndex = 25;
+            this.seriesNumberRadio.TabStop = true;
+            this.seriesNumberRadio.Text = "Серия и номер";
+            this.seriesNumberRadio.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
+            // birthTownRadio
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(6, 41);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(250, 27);
-            this.dateTimePicker1.TabIndex = 16;
+            this.birthTownRadio.AutoSize = true;
+            this.birthTownRadio.Location = new System.Drawing.Point(100, 52);
+            this.birthTownRadio.Name = "birthTownRadio";
+            this.birthTownRadio.Size = new System.Drawing.Size(148, 24);
+            this.birthTownRadio.TabIndex = 24;
+            this.birthTownRadio.TabStop = true;
+            this.birthTownRadio.Text = "Место рождения";
+            this.birthTownRadio.UseVisualStyleBackColor = true;
+            // 
+            // patronymicRadio
+            // 
+            this.patronymicRadio.AutoSize = true;
+            this.patronymicRadio.Location = new System.Drawing.Point(100, 22);
+            this.patronymicRadio.Name = "patronymicRadio";
+            this.patronymicRadio.Size = new System.Drawing.Size(93, 24);
+            this.patronymicRadio.TabIndex = 23;
+            this.patronymicRadio.TabStop = true;
+            this.patronymicRadio.Text = "Отчество";
+            this.patronymicRadio.UseVisualStyleBackColor = true;
+            // 
+            // nameRadio
+            // 
+            this.nameRadio.AutoSize = true;
+            this.nameRadio.Location = new System.Drawing.Point(6, 19);
+            this.nameRadio.Name = "nameRadio";
+            this.nameRadio.Size = new System.Drawing.Size(60, 24);
+            this.nameRadio.TabIndex = 21;
+            this.nameRadio.TabStop = true;
+            this.nameRadio.Text = "Имя";
+            this.nameRadio.UseVisualStyleBackColor = true;
+            // 
+            // surnameRadio
+            // 
+            this.surnameRadio.AutoSize = true;
+            this.surnameRadio.Location = new System.Drawing.Point(6, 49);
+            this.surnameRadio.Name = "surnameRadio";
+            this.surnameRadio.Size = new System.Drawing.Size(94, 24);
+            this.surnameRadio.TabIndex = 22;
+            this.surnameRadio.TabStop = true;
+            this.surnameRadio.Text = "Фамилия";
+            this.surnameRadio.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(317, 22);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.PlaceholderText = "Введите";
+            this.textBox1.Size = new System.Drawing.Size(125, 27);
+            this.textBox1.TabIndex = 20;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // button6
+            // 
+            this.button6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button6.Location = new System.Drawing.Point(8, 6);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(283, 68);
+            this.button6.TabIndex = 19;
+            this.button6.Text = "Открыть форму для добавления водителя";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // dataGridView1
             // 
@@ -174,7 +241,8 @@
             this.Column2,
             this.Column4,
             this.Column5,
-            this.Column6});
+            this.Column6,
+            this.Column19});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -189,12 +257,14 @@
             this.dataGridView1.RowTemplate.Height = 29;
             this.dataGridView1.Size = new System.Drawing.Size(941, 210);
             this.dataGridView1.TabIndex = 15;
+            this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick_1);
             // 
             // Column1
             // 
             this.Column1.HeaderText = "Id";
             this.Column1.MinimumWidth = 3;
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             this.Column1.Width = 55;
             // 
             // Column3
@@ -202,6 +272,7 @@
             this.Column3.HeaderText = "Имя";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             this.Column3.Width = 75;
             // 
             // Column2
@@ -209,6 +280,7 @@
             this.Column2.HeaderText = "Фамилия";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             this.Column2.Width = 118;
             // 
             // Column4
@@ -216,6 +288,7 @@
             this.Column4.HeaderText = "Отчество";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             this.Column4.Width = 118;
             // 
             // Column5
@@ -230,34 +303,16 @@
             this.Column6.HeaderText = "Место рождения";
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             this.Column6.Width = 166;
             // 
-            // textBox2
+            // Column19
             // 
-            this.textBox2.Location = new System.Drawing.Point(137, 8);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(125, 27);
-            this.textBox2.TabIndex = 14;
-            this.textBox2.Text = "Фамилия";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(6, 8);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 27);
-            this.textBox1.TabIndex = 13;
-            this.textBox1.Text = "Имя";
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(482, 39);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(314, 29);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Добавить водителя";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Column19.HeaderText = "Номер и серия паспорта";
+            this.Column19.MinimumWidth = 6;
+            this.Column19.Name = "Column19";
+            this.Column19.ReadOnly = true;
+            this.Column19.Width = 225;
             // 
             // button1
             // 
@@ -282,6 +337,17 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Вод. удост-ия";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button5.Location = new System.Drawing.Point(8, 6);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(228, 74);
+            this.button5.TabIndex = 18;
+            this.button5.Text = "Открыть форму для выдачи ВУ";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.OpenFormAddDriverLicence);
             // 
             // button3
             // 
@@ -360,21 +426,21 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Дата начала действия";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 134;
+            this.dataGridViewTextBoxColumn4.Width = 203;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.HeaderText = "Дата конца действия";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 128;
+            this.dataGridViewTextBoxColumn5.Width = 197;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.HeaderText = "Орган, выдавший ВУ";
             this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 142;
+            this.dataGridViewTextBoxColumn6.Width = 175;
             // 
             // Column7
             // 
@@ -600,20 +666,9 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(80, 24);
-            this.toolStripMenuItem1.Text = "Закрыть";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(67, 24);
+            this.toolStripMenuItem1.Text = "Выйти";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
-            // 
-            // button5
-            // 
-            this.button5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button5.Location = new System.Drawing.Point(8, 6);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(228, 74);
-            this.button5.TabIndex = 18;
-            this.button5.Text = "Открыть форму для выдачи ВУ";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.OpenFormAddDriverLicence);
             // 
             // SupervisorView
             // 
@@ -628,10 +683,13 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Карточка сотрудника";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SupervisorView_FormClosed);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -654,19 +712,7 @@
         private MenuStrip menuStrip1;
         private ToolStripTextBox toolStripTextBox1;
         private ToolStripMenuItem toolStripMenuItem1;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private DateTimePicker dateTimePicker1;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column6;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private Button button2;
         private Button button1;
         private Button button3;
         private DataGridView dataGridView2;
@@ -696,5 +742,20 @@
         private DataGridViewTextBoxColumn Column17;
         private DataGridViewTextBoxColumn Column18;
         private Button button5;
+        private Button button6;
+        private TextBox textBox1;
+        private GroupBox groupBox1;
+        private RadioButton nameRadio;
+        private RadioButton surnameRadio;
+        private RadioButton patronymicRadio;
+        private RadioButton seriesNumberRadio;
+        private RadioButton birthTownRadio;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column19;
     }
 }

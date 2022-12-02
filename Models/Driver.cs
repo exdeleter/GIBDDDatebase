@@ -1,4 +1,6 @@
-﻿namespace GIBDDDatebase.Models;
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace GIBDDDatebase.Models;
 
 internal class Driver : BaseEntity
 {
@@ -26,4 +28,9 @@ internal class Driver : BaseEntity
     /// Место рождения
     /// </summary>
     public string BirthTown { get; set; }
+
+    /// <summary>
+    /// Серия и номер
+    /// </summary>
+    public string SeriesNumber { get; set; }
 }

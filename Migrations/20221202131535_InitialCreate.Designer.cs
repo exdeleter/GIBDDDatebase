@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace GIBDDDatebase.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20221129115557_addRepaymentDat11111")]
-    partial class addRepaymentDat11111
+    [Migration("20221202131535_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -62,6 +62,10 @@ namespace GIBDDDatebase.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Patronymic")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("SeriesNumber")
                         .IsRequired()
                         .HasColumnType("text");
 

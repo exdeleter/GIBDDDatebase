@@ -62,6 +62,10 @@ namespace GIBDDDatebase.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("SeriesNumber")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("Surname")
                         .IsRequired()
                         .HasColumnType("text");

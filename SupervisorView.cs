@@ -14,7 +14,7 @@ namespace GIBDDDatebase
         {
             Form ifrm = Application.OpenForms[0];
             ifrm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void button1_Click_1(object sender, EventArgs e) => GetDriversAsync();
@@ -33,7 +33,8 @@ namespace GIBDDDatebase
                     {
                         $"{u.Id}", $"{u.Name}",
                         $"{u.Surname}", $"{u.Patronymic}", 
-                        $"{u.DateBirth}", $"{u.BirthTown}"
+                        $"{u.DateBirth}", $"{u.BirthTown}",
+                        $"{u.SeriesNumber}"
                     };
                     dataGridView1.Rows.Add(row);
                 }
@@ -42,32 +43,6 @@ namespace GIBDDDatebase
 
         private async void button2_Click(object sender, EventArgs e)
         {
-            try
-            {
-                using (ApplicationContext db = new ApplicationContext())
-                {
-                    Driver newUser = new Driver
-                    {
-                        Name = textBox1.Text,
-                        Surname = textBox2.Text,
-                        Patronymic = textBox3.Text,
-                        DateBirth = dateTimePicker1.Value.ToUniversalTime(),
-                        BirthTown = textBox4.Text
-                    };
-
-                    db.Drivers.Add(newUser);
-
-                    await db.SaveChangesAsync();
-
-                    Console.WriteLine("Новый водитель успешно добавлен");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-            GetDriversAsync();
         }
 
         private void SupervisorView_FormClosed(object sender, FormClosedEventArgs e)
@@ -133,7 +108,7 @@ namespace GIBDDDatebase
                     .Include(x => x.TransportVehicle)
                     .Include(x => x.Driver)
                     .Include(x => x.Violation)
-                    .Where(x => x.RepaymentDate == DateTime.MinValue)
+                    .Where(x => x.RepaymentDate == DateTime.MinValue || x.RepaymentDate == null)
                     .ToListAsync();
 
                 violationsGrid.Rows.Clear();
@@ -157,6 +132,72 @@ namespace GIBDDDatebase
         {
             LicenceForm form = new LicenceForm();
             form.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            AddDriverForm df = new AddDriverForm();
+            df.ShowDialog();
+        }
+
+        private async void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                var drivers = new List<Driver>();
+
+                if (nameRadio.Checked)
+                {
+                    drivers = await db.Drivers.Where(x => x.Name.Contains(textBox1.Text)).ToListAsync();
+                }
+
+                if (surnameRadio.Checked)
+                {
+                    drivers = await db.Drivers.Where(x => x.Surname.Contains(textBox1.Text)).ToListAsync();
+                }
+
+                if (patronymicRadio.Checked)
+                {
+                    drivers = await db.Drivers.Where(x => x.Patronymic.Contains(textBox1.Text)).ToListAsync();
+                }
+
+                if (birthTownRadio.Checked)
+                {
+                    drivers = await db.Drivers.Where(x => x.BirthTown.Contains(textBox1.Text)).ToListAsync();
+                }
+
+                if (seriesNumberRadio.Checked)
+                {
+                    drivers = await db.Drivers.Where(x => x.SeriesNumber.Contains(textBox1.Text)).ToListAsync();
+                }
+
+                dataGridView1.Rows.Clear();
+
+                foreach (var u in drivers)
+                {
+                    string[] row =
+                    {
+                        $"{u.Id}", $"{u.Name}",
+                        $"{u.Surname}", $"{u.Patronymic}",
+                        $"{u.DateBirth}", $"{u.BirthTown}",
+                        $"{u.SeriesNumber}"
+                    };
+                    dataGridView1.Rows.Add(row);
+                }
+            }
+        }
+
+        private void dataGridView1_CellContentDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            int selRowNum = dataGridView1.CurrentCell.RowIndex;
+
+            var selectedId = dataGridView1.Rows[selRowNum].Cells[0].Value.ToString();
+
+            AddDriverForm df = new AddDriverForm();
+
+            df.GetDriver(int.Parse(selectedId));
+
+            df.ShowDialog();
         }
     }
 }

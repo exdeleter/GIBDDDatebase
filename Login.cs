@@ -23,14 +23,16 @@ namespace GIBDDDatebase
 
         private async void button3_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text))
-            {
-                MessageBox.Show("Введите логин и(или) пароль");
-                return;
-            }
+          
 
             if (isSupervisor)
             {
+                if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text))
+                {
+                    MessageBox.Show("Введите логин и(или) пароль");
+                    return;
+                }
+
                 using (ApplicationContext db = new ApplicationContext())
                 {
                     var supervisors = await db.Supervisors.ToListAsync();
@@ -52,7 +54,28 @@ namespace GIBDDDatebase
                     form1.Show();
                     this.Hide();
                 }
+            } else
+            {
+                if (string.IsNullOrEmpty(textBox1.Text))
+                {
+                    MessageBox.Show("Введите серию и номер");
+                    return;
+                }
+                DriverForm df = new DriverForm();
+                df.LoadDriver(textBox1.Text);
+                df.Show();
+                this.Hide();
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            label1.Text = "Серия и номер паспорта:";
+            label1.Location = new System.Drawing.Point(0, 320);
+            label1.Visible = true;
+            textBox1.Visible = true;
+            button3.Visible = true;
+            isSupervisor = false;
         }
     }
 }

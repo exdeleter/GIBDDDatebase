@@ -13,6 +13,8 @@ namespace GIBDDDatebase
 
         private void button1_Click(object sender, EventArgs e)
         {
+            label1.Location = new System.Drawing.Point(170, 310);
+            label1.Text = "Логин: ";
             textBox1.Visible = true;
             label1.Visible = true;
             textBox2.Visible = true;
@@ -23,8 +25,6 @@ namespace GIBDDDatebase
 
         private async void button3_Click(object sender, EventArgs e)
         {
-          
-
             if (isSupervisor)
             {
                 if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text))
@@ -41,12 +41,12 @@ namespace GIBDDDatebase
 
                     if (currentSupervisor == null)
                     {
-                        MessageBox.Show($"Сотрудник с логином {textBox1.Text} не найден");
+                        MessageBox.Show($"Сотрудник с логином {textBox1.Text} не найден", "Ошибка авторизации", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
 
                     if(!currentSupervisor.Password.Equals(textBox2.Text)) {
-                        MessageBox.Show("Пароль неверный!");
+                        MessageBox.Show("Пароль неверный!", "Ошибка авторизации", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
 
@@ -71,8 +71,10 @@ namespace GIBDDDatebase
         private void button2_Click(object sender, EventArgs e)
         {
             label1.Text = "Серия и номер паспорта:";
-            label1.Location = new System.Drawing.Point(0, 320);
+            label1.Location = new System.Drawing.Point(0, 310);
             label1.Visible = true;
+            label2.Visible = false;
+            textBox2.Visible = false;
             textBox1.Visible = true;
             button3.Visible = true;
             isSupervisor = false;

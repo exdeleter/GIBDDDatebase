@@ -43,7 +43,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::GIBDDDatebase.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(161, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(164, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(212, 200);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -52,7 +52,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(145, 243);
+            this.button1.Location = new System.Drawing.Point(137, 230);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(255, 29);
             this.button1.TabIndex = 1;
@@ -62,7 +62,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(145, 278);
+            this.button2.Location = new System.Drawing.Point(137, 265);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(255, 29);
             this.button2.TabIndex = 2;
@@ -72,7 +72,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(265, 322);
+            this.textBox1.Location = new System.Drawing.Point(267, 308);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(125, 28);
             this.textBox1.TabIndex = 6;
@@ -82,7 +82,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(172, 321);
+            this.label1.Location = new System.Drawing.Point(174, 307);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 26);
             this.label1.TabIndex = 5;
@@ -91,7 +91,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(265, 355);
+            this.textBox2.Location = new System.Drawing.Point(267, 342);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(125, 28);
             this.textBox2.TabIndex = 8;
@@ -102,7 +102,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(161, 355);
+            this.label2.Location = new System.Drawing.Point(164, 341);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 26);
             this.label2.TabIndex = 7;
@@ -112,7 +112,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(207, 399);
+            this.button3.Location = new System.Drawing.Point(182, 388);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(148, 44);
             this.button3.TabIndex = 9;
@@ -125,7 +125,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(556, 504);
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ClientSize = new System.Drawing.Size(522, 454);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
@@ -138,6 +139,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ГИБДД";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

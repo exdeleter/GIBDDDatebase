@@ -57,6 +57,12 @@
             this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.issuerRadio = new System.Windows.Forms.RadioButton();
+            this.ragionRadio = new System.Windows.Forms.RadioButton();
+            this.driverIdRadio = new System.Windows.Forms.RadioButton();
+            this.townRadio = new System.Windows.Forms.RadioButton();
             this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -67,6 +73,7 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.GetCars = new System.Windows.Forms.Button();
             this.carsDataView = new System.Windows.Forms.DataGridView();
@@ -85,6 +92,13 @@
             this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
@@ -92,11 +106,14 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.carsDataView)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.violationsGrid)).BeginInit();
+            this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,26 +127,29 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Location = new System.Drawing.Point(0, 29);
+            this.tabControl1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tabControl1.Location = new System.Drawing.Point(0, 32);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(963, 376);
+            this.tabControl1.Size = new System.Drawing.Size(1324, 414);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.LightBlue;
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Controls.Add(this.button6);
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Location = new System.Drawing.Point(4, 31);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(955, 343);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tabPage1.Size = new System.Drawing.Size(1316, 379);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Водители";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -138,9 +158,11 @@
             this.groupBox1.Controls.Add(this.patronymicRadio);
             this.groupBox1.Controls.Add(this.nameRadio);
             this.groupBox1.Controls.Add(this.surnameRadio);
-            this.groupBox1.Location = new System.Drawing.Point(466, 6);
+            this.groupBox1.Location = new System.Drawing.Point(641, 7);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(350, 94);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.groupBox1.Size = new System.Drawing.Size(520, 103);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Параметры поиска";
@@ -148,9 +170,10 @@
             // seriesNumberRadio
             // 
             this.seriesNumberRadio.AutoSize = true;
-            this.seriesNumberRadio.Location = new System.Drawing.Point(209, 22);
+            this.seriesNumberRadio.Location = new System.Drawing.Point(287, 24);
+            this.seriesNumberRadio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.seriesNumberRadio.Name = "seriesNumberRadio";
-            this.seriesNumberRadio.Size = new System.Drawing.Size(136, 24);
+            this.seriesNumberRadio.Size = new System.Drawing.Size(216, 29);
             this.seriesNumberRadio.TabIndex = 25;
             this.seriesNumberRadio.TabStop = true;
             this.seriesNumberRadio.Text = "Серия и номер";
@@ -159,9 +182,10 @@
             // birthTownRadio
             // 
             this.birthTownRadio.AutoSize = true;
-            this.birthTownRadio.Location = new System.Drawing.Point(100, 52);
+            this.birthTownRadio.Location = new System.Drawing.Point(155, 54);
+            this.birthTownRadio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.birthTownRadio.Name = "birthTownRadio";
-            this.birthTownRadio.Size = new System.Drawing.Size(148, 24);
+            this.birthTownRadio.Size = new System.Drawing.Size(239, 29);
             this.birthTownRadio.TabIndex = 24;
             this.birthTownRadio.TabStop = true;
             this.birthTownRadio.Text = "Место рождения";
@@ -170,9 +194,10 @@
             // patronymicRadio
             // 
             this.patronymicRadio.AutoSize = true;
-            this.patronymicRadio.Location = new System.Drawing.Point(100, 22);
+            this.patronymicRadio.Location = new System.Drawing.Point(138, 24);
+            this.patronymicRadio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.patronymicRadio.Name = "patronymicRadio";
-            this.patronymicRadio.Size = new System.Drawing.Size(93, 24);
+            this.patronymicRadio.Size = new System.Drawing.Size(151, 29);
             this.patronymicRadio.TabIndex = 23;
             this.patronymicRadio.TabStop = true;
             this.patronymicRadio.Text = "Отчество";
@@ -181,9 +206,10 @@
             // nameRadio
             // 
             this.nameRadio.AutoSize = true;
-            this.nameRadio.Location = new System.Drawing.Point(6, 19);
+            this.nameRadio.Location = new System.Drawing.Point(8, 24);
+            this.nameRadio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.nameRadio.Name = "nameRadio";
-            this.nameRadio.Size = new System.Drawing.Size(60, 24);
+            this.nameRadio.Size = new System.Drawing.Size(92, 29);
             this.nameRadio.TabIndex = 21;
             this.nameRadio.TabStop = true;
             this.nameRadio.Text = "Имя";
@@ -192,9 +218,10 @@
             // surnameRadio
             // 
             this.surnameRadio.AutoSize = true;
-            this.surnameRadio.Location = new System.Drawing.Point(6, 49);
+            this.surnameRadio.Location = new System.Drawing.Point(8, 54);
+            this.surnameRadio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.surnameRadio.Name = "surnameRadio";
-            this.surnameRadio.Size = new System.Drawing.Size(94, 24);
+            this.surnameRadio.Size = new System.Drawing.Size(151, 29);
             this.surnameRadio.TabIndex = 22;
             this.surnameRadio.TabStop = true;
             this.surnameRadio.Text = "Фамилия";
@@ -202,19 +229,21 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(317, 22);
+            this.textBox1.Location = new System.Drawing.Point(436, 24);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox1.Name = "textBox1";
             this.textBox1.PlaceholderText = "Введите";
-            this.textBox1.Size = new System.Drawing.Size(125, 27);
+            this.textBox1.Size = new System.Drawing.Size(170, 30);
             this.textBox1.TabIndex = 20;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button6.Location = new System.Drawing.Point(8, 6);
+            this.button6.Location = new System.Drawing.Point(11, 7);
+            this.button6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(283, 68);
+            this.button6.Size = new System.Drawing.Size(389, 75);
             this.button6.TabIndex = 19;
             this.button6.Text = "Открыть форму для добавления водителя";
             this.button6.UseVisualStyleBackColor = true;
@@ -251,11 +280,12 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 127);
+            this.dataGridView1.Location = new System.Drawing.Point(8, 140);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(941, 210);
+            this.dataGridView1.Size = new System.Drawing.Size(1294, 231);
             this.dataGridView1.TabIndex = 15;
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick_1);
             // 
@@ -317,9 +347,10 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(6, 92);
+            this.button1.Location = new System.Drawing.Point(8, 101);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(162, 29);
+            this.button1.Size = new System.Drawing.Size(223, 32);
             this.button1.TabIndex = 11;
             this.button1.Text = "Загрузить водителей";
             this.button1.UseVisualStyleBackColor = true;
@@ -327,23 +358,100 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.Color.LightBlue;
+            this.tabPage2.Controls.Add(this.textBox2);
+            this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Controls.Add(this.button5);
             this.tabPage2.Controls.Add(this.button3);
             this.tabPage2.Controls.Add(this.dataGridView2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Location = new System.Drawing.Point(4, 31);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(955, 343);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tabPage2.Size = new System.Drawing.Size(1316, 379);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Вод. удост-ия";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(395, 33);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.PlaceholderText = "Введите";
+            this.textBox2.Size = new System.Drawing.Size(209, 30);
+            this.textBox2.TabIndex = 25;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.issuerRadio);
+            this.groupBox2.Controls.Add(this.ragionRadio);
+            this.groupBox2.Controls.Add(this.driverIdRadio);
+            this.groupBox2.Controls.Add(this.townRadio);
+            this.groupBox2.Location = new System.Drawing.Point(648, 7);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.groupBox2.Size = new System.Drawing.Size(481, 103);
+            this.groupBox2.TabIndex = 24;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Параметры поиска";
+            // 
+            // issuerRadio
+            // 
+            this.issuerRadio.AutoSize = true;
+            this.issuerRadio.Location = new System.Drawing.Point(138, 24);
+            this.issuerRadio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.issuerRadio.Name = "issuerRadio";
+            this.issuerRadio.Size = new System.Drawing.Size(287, 29);
+            this.issuerRadio.TabIndex = 25;
+            this.issuerRadio.TabStop = true;
+            this.issuerRadio.Text = "Орган, выдавший ВУ";
+            this.issuerRadio.UseVisualStyleBackColor = true;
+            // 
+            // ragionRadio
+            // 
+            this.ragionRadio.AutoSize = true;
+            this.ragionRadio.Location = new System.Drawing.Point(138, 57);
+            this.ragionRadio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ragionRadio.Name = "ragionRadio";
+            this.ragionRadio.Size = new System.Drawing.Size(125, 29);
+            this.ragionRadio.TabIndex = 24;
+            this.ragionRadio.TabStop = true;
+            this.ragionRadio.Text = "Регион";
+            this.ragionRadio.UseVisualStyleBackColor = true;
+            // 
+            // driverIdRadio
+            // 
+            this.driverIdRadio.AutoSize = true;
+            this.driverIdRadio.Location = new System.Drawing.Point(8, 21);
+            this.driverIdRadio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.driverIdRadio.Name = "driverIdRadio";
+            this.driverIdRadio.Size = new System.Drawing.Size(103, 29);
+            this.driverIdRadio.TabIndex = 21;
+            this.driverIdRadio.TabStop = true;
+            this.driverIdRadio.Text = "ФИО";
+            this.driverIdRadio.UseVisualStyleBackColor = true;
+            // 
+            // townRadio
+            // 
+            this.townRadio.AutoSize = true;
+            this.townRadio.Location = new System.Drawing.Point(8, 54);
+            this.townRadio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.townRadio.Name = "townRadio";
+            this.townRadio.Size = new System.Drawing.Size(110, 29);
+            this.townRadio.TabIndex = 22;
+            this.townRadio.TabStop = true;
+            this.townRadio.Text = "Город";
+            this.townRadio.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button5.Location = new System.Drawing.Point(8, 6);
+            this.button5.Location = new System.Drawing.Point(11, 7);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(228, 74);
+            this.button5.Size = new System.Drawing.Size(314, 81);
             this.button5.TabIndex = 18;
             this.button5.Text = "Открыть форму для выдачи ВУ";
             this.button5.UseVisualStyleBackColor = true;
@@ -352,9 +460,10 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(701, 96);
+            this.button3.Location = new System.Drawing.Point(11, 106);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(234, 47);
+            this.button3.Size = new System.Drawing.Size(322, 52);
             this.button3.TabIndex = 17;
             this.button3.Text = "Получить все ВУ";
             this.button3.UseVisualStyleBackColor = true;
@@ -383,7 +492,8 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
-            this.Column7});
+            this.Column7,
+            this.Column20});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -393,18 +503,22 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView2.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 149);
+            this.dataGridView2.Location = new System.Drawing.Point(8, 164);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 29;
-            this.dataGridView2.Size = new System.Drawing.Size(943, 188);
+            this.dataGridView2.Size = new System.Drawing.Size(1297, 207);
             this.dataGridView2.TabIndex = 16;
+            this.dataGridView2.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentDoubleClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "Id";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 3;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Width = 55;
             // 
             // dataGridViewTextBoxColumn2
@@ -412,6 +526,7 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "ФИО";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Width = 83;
             // 
             // dataGridViewTextBoxColumn3
@@ -419,6 +534,7 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "Город";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 88;
             // 
             // dataGridViewTextBoxColumn4
@@ -426,6 +542,7 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Дата начала действия";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Width = 203;
             // 
             // dataGridViewTextBoxColumn5
@@ -433,6 +550,7 @@
             this.dataGridViewTextBoxColumn5.HeaderText = "Дата конца действия";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Width = 197;
             // 
             // dataGridViewTextBoxColumn6
@@ -440,6 +558,7 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "Орган, выдавший ВУ";
             this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             this.dataGridViewTextBoxColumn6.Width = 175;
             // 
             // Column7
@@ -447,25 +566,36 @@
             this.Column7.HeaderText = "Регион выдачи";
             this.Column7.MinimumWidth = 6;
             this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
             this.Column7.Width = 151;
+            // 
+            // Column20
+            // 
+            this.Column20.HeaderText = "Выданные категории";
+            this.Column20.MinimumWidth = 6;
+            this.Column20.Name = "Column20";
+            this.Column20.ReadOnly = true;
+            this.Column20.Width = 200;
             // 
             // tabPage3
             // 
+            this.tabPage3.BackColor = System.Drawing.Color.LightBlue;
             this.tabPage3.Controls.Add(this.GetCars);
             this.tabPage3.Controls.Add(this.carsDataView);
-            this.tabPage3.Location = new System.Drawing.Point(4, 29);
+            this.tabPage3.Location = new System.Drawing.Point(4, 31);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(955, 343);
+            this.tabPage3.Size = new System.Drawing.Size(1316, 379);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Автомобили";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // GetCars
             // 
             this.GetCars.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.GetCars.Location = new System.Drawing.Point(752, 77);
+            this.GetCars.Location = new System.Drawing.Point(1034, 85);
+            this.GetCars.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.GetCars.Name = "GetCars";
-            this.GetCars.Size = new System.Drawing.Size(183, 69);
+            this.GetCars.Size = new System.Drawing.Size(252, 76);
             this.GetCars.TabIndex = 1;
             this.GetCars.Text = "Получить список всех машин";
             this.GetCars.UseVisualStyleBackColor = true;
@@ -501,11 +631,12 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.carsDataView.DefaultCellStyle = dataGridViewCellStyle6;
-            this.carsDataView.Location = new System.Drawing.Point(3, 152);
+            this.carsDataView.Location = new System.Drawing.Point(4, 167);
+            this.carsDataView.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.carsDataView.Name = "carsDataView";
             this.carsDataView.RowHeadersWidth = 51;
             this.carsDataView.RowTemplate.Height = 29;
-            this.carsDataView.Size = new System.Drawing.Size(944, 188);
+            this.carsDataView.Size = new System.Drawing.Size(1298, 207);
             this.carsDataView.TabIndex = 0;
             // 
             // Column8
@@ -552,21 +683,23 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.BackColor = System.Drawing.Color.LightBlue;
             this.tabPage4.Controls.Add(this.button4);
             this.tabPage4.Controls.Add(this.violationsGrid);
-            this.tabPage4.Location = new System.Drawing.Point(4, 29);
+            this.tabPage4.Location = new System.Drawing.Point(4, 31);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(955, 343);
+            this.tabPage4.Size = new System.Drawing.Size(1316, 379);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Нарушения";
-            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button4.Location = new System.Drawing.Point(687, 60);
+            this.button4.Location = new System.Drawing.Point(945, 66);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(240, 56);
+            this.button4.Size = new System.Drawing.Size(330, 62);
             this.button4.TabIndex = 1;
             this.button4.Text = "Получить все актуальные нарушения";
             this.button4.UseVisualStyleBackColor = true;
@@ -601,11 +734,12 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.violationsGrid.DefaultCellStyle = dataGridViewCellStyle8;
-            this.violationsGrid.Location = new System.Drawing.Point(3, 131);
+            this.violationsGrid.Location = new System.Drawing.Point(4, 144);
+            this.violationsGrid.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.violationsGrid.Name = "violationsGrid";
             this.violationsGrid.RowHeadersWidth = 51;
             this.violationsGrid.RowTemplate.Height = 29;
-            this.violationsGrid.Size = new System.Drawing.Size(946, 206);
+            this.violationsGrid.Size = new System.Drawing.Size(1301, 227);
             this.violationsGrid.TabIndex = 0;
             // 
             // Column14
@@ -645,12 +779,83 @@
             // 
             // tabPage5
             // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 29);
+            this.tabPage5.BackColor = System.Drawing.Color.LightBlue;
+            this.tabPage5.Controls.Add(this.button2);
+            this.tabPage5.Controls.Add(this.dataGridView3);
+            this.tabPage5.Location = new System.Drawing.Point(4, 31);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(955, 343);
+            this.tabPage5.Size = new System.Drawing.Size(1316, 379);
             this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "tabPage5";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            this.tabPage5.Text = "Страховые полисы";
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button2.Location = new System.Drawing.Point(989, 98);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(314, 55);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Получить все полисы";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column21,
+            this.Column22,
+            this.Column23,
+            this.Column24,
+            this.Column25});
+            this.dataGridView3.Location = new System.Drawing.Point(11, 162);
+            this.dataGridView3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersWidth = 51;
+            this.dataGridView3.RowTemplate.Height = 29;
+            this.dataGridView3.Size = new System.Drawing.Size(1291, 205);
+            this.dataGridView3.TabIndex = 0;
+            // 
+            // Column21
+            // 
+            this.Column21.HeaderText = "ФИО";
+            this.Column21.MinimumWidth = 6;
+            this.Column21.Name = "Column21";
+            this.Column21.Width = 83;
+            // 
+            // Column22
+            // 
+            this.Column22.HeaderText = "Гос. номера";
+            this.Column22.MinimumWidth = 6;
+            this.Column22.Name = "Column22";
+            this.Column22.Width = 128;
+            // 
+            // Column23
+            // 
+            this.Column23.HeaderText = "Дата начала действия";
+            this.Column23.MinimumWidth = 6;
+            this.Column23.Name = "Column23";
+            this.Column23.Width = 203;
+            // 
+            // Column24
+            // 
+            this.Column24.HeaderText = "Дата конца действия";
+            this.Column24.MinimumWidth = 6;
+            this.Column24.Name = "Column24";
+            this.Column24.Width = 197;
+            // 
+            // Column25
+            // 
+            this.Column25.HeaderText = "Страховая сумма";
+            this.Column25.MinimumWidth = 6;
+            this.Column25.Name = "Column25";
+            this.Column25.Width = 167;
             // 
             // menuStrip1
             // 
@@ -659,26 +864,31 @@
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(963, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1324, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // toolStripMenuItem1
             // 
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(67, 24);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(75, 24);
             this.toolStripMenuItem1.Text = "Выйти";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // SupervisorView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(963, 405);
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ClientSize = new System.Drawing.Size(1324, 446);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
+            this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "SupervisorView";
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -692,11 +902,16 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.carsDataView)).EndInit();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.violationsGrid)).EndInit();
+            this.tabPage5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -757,5 +972,19 @@
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column19;
+        private DataGridViewTextBoxColumn Column20;
+        private TextBox textBox2;
+        private GroupBox groupBox2;
+        private RadioButton issuerRadio;
+        private RadioButton ragionRadio;
+        private RadioButton driverIdRadio;
+        private RadioButton townRadio;
+        private Button button2;
+        private DataGridView dataGridView3;
+        private DataGridViewTextBoxColumn Column21;
+        private DataGridViewTextBoxColumn Column22;
+        private DataGridViewTextBoxColumn Column23;
+        private DataGridViewTextBoxColumn Column24;
+        private DataGridViewTextBoxColumn Column25;
     }
 }

@@ -53,7 +53,7 @@ namespace GIBDDDatebase
                 {
                     using (ApplicationContext context = new ApplicationContext())
                     {
-                        var driver = context.Drivers.Where(x => x.Id == _id).FirstOrDefault();
+                        var driver = context.Drivers.FirstOrDefault(x => x.Id == _id);
 
                         if (driver == null)
                         {
@@ -126,13 +126,13 @@ namespace GIBDDDatebase
                 nameText.Text = driver.Name; 
                 surnameText.Text = driver.Surname; 
                 patronymicText.Text = driver.Patronymic; 
-                dateBirthPicker.Value = driver.DateBirth; 
+                dateBirthPicker.Value = driver.DateBirth < DateTimePicker.MinimumDateTime ? DateTimePicker.MinimumDateTime : driver.DateBirth; 
                 birthTownText.Text = driver.BirthTown; 
                 seriesNumberText.Text = driver.SeriesNumber;
 
             }
 
-            addButton.Text = "Сохранение водителя";
+            addButton.Text = "Сохранить водителя";
 
             isEdit = true;
 

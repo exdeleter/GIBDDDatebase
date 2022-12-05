@@ -39,7 +39,7 @@ namespace GIBDDDatebase.Models
         /// <summary>
         /// Категория
         /// </summary>
-        [ForeignKey("DriverLicenceId")]
+        [ForeignKey("CategoryId")]
         public Category Category { get; set; }
     }
 }

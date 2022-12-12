@@ -110,6 +110,7 @@ namespace GIBDDDatebase
                 .Include(x => x.Driver)
                 .Include(x => x.Violation)
                 .Where(x => x.RepaymentDate == DateTime.MinValue || x.RepaymentDate == null)
+                .OrderByDescending(x => x.Date)
                 .ToListAsync();
 
             violationsGrid.Rows.Clear();
@@ -175,10 +176,8 @@ namespace GIBDDDatebase
             {
                 string[] row =
                 {
-                    $"{u.Id}", $"{u.Name}",
-                    $"{u.Surname}", $"{u.Patronymic}",
-                    $"{u.DateBirth}", $"{u.BirthTown}",
-                    $"{u.SeriesNumber}"
+                    $"{u.Id}", $"{u.Name}", $"{u.Surname}", $"{u.Patronymic}",
+                    $"{u.DateBirth}", $"{u.BirthTown}", $"{u.SeriesNumber}"
                 };
                 dataGridView1.Rows.Add(row);
             }
@@ -213,6 +212,7 @@ namespace GIBDDDatebase
         private async void textBox2_TextChanged(object sender, EventArgs e)
         {
             var driverLicencies = new List<DriverLicence>();
+
             try
             {
                 if (driverIdRadio.Checked)
@@ -274,9 +274,12 @@ namespace GIBDDDatebase
 
                 string[] row =
                 {
-                    $"{u.Id}", $"{string.Join(' ',  u.Driver.Surname,  u.Driver.Name,u.Driver.Patronymic)}",
-                    $"{u.Driver.BirthTown}", $"{u.StartDate}",
-                    $"{u.EndDate}", $"{u.IssuerName}",
+                    $"{u.Id}", 
+                    @$"{string.Join(' ',  
+                        u.Driver.Surname,  
+                        u.Driver.Name,
+                        u.Driver.Patronymic)}",
+                    $"{u.Driver.BirthTown}", $"{u.StartDate}", $"{u.EndDate}", $"{u.IssuerName}",
                     $"{u.RegionNum}", $"{string.Join(", ", currentDlc)}"
                 };
 
@@ -290,18 +293,78 @@ namespace GIBDDDatebase
                 .Include(x => x.TransportVehicle)
                 .Include(x => x.DriverLicence)
                 .Include(x => x.DriverLicence.Driver)
+                .Where(x => x.EndDate > DateTime.UtcNow)
                 .ToListAsync();
 
             dataGridView3.Rows.Clear();
 
             foreach (var u in isuransePolicies)
             {
-
                 string[] row =
                 {
-                    $"{string.Join(' ',  u.DriverLicence.Driver.Surname,  u.DriverLicence.Driver.Name,u.DriverLicence.Driver.Patronymic)}",
-                    $"{u.TransportVehicle.LicencePlate}", $"{u.StartDate}",
-                    $"{u.EndDate}", $"{u.InsuranseSum}"
+                    @$"{string.Join(' ',  
+                        u.DriverLicence.Driver.Surname,  
+                        u.DriverLicence.Driver.Name,
+                        u.DriverLicence.Driver.Patronymic)}",
+                    $"{u.TransportVehicle.LicencePlate}", $"{u.StartDate}", $"{u.EndDate}", $"{u.InsuranseSum}"
+                };
+
+                dataGridView3.Rows.Add(row);
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            IncidentsForm incidentsForm = new IncidentsForm();
+
+            incidentsForm.ShowDialog();
+        }
+
+        private async void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            var insurancePolicies = new List<InsurancePolicy>();
+
+            try
+            {
+                if (radioButton3.Checked)
+                {
+                    insurancePolicies = await _context.InsurancePolicies
+                        .Include(x => x.TransportVehicle)
+                        .Include(x => x.DriverLicence)
+                        .Include(x => x.DriverLicence.Driver)
+                        .Where(x => x.DriverLicence.Driver.Name.Contains(textBox3.Text) || 
+                                x.DriverLicence.Driver.Patronymic.Contains(textBox3.Text) || 
+                                x.DriverLicence.Driver.Surname.Contains(textBox3.Text))
+                        .ToListAsync();
+                }
+
+                if (radioButton4.Checked)
+                {
+                    insurancePolicies = await _context.InsurancePolicies
+                        .Include(x => x.TransportVehicle)
+                        .Include(x => x.DriverLicence)
+                        .Include(x => x.DriverLicence.Driver)
+                        .Where(x => x.TransportVehicle.LicencePlate.Contains(textBox3.Text.ToUpper()))
+                        .ToListAsync();
+                }
+            }
+            
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+            dataGridView3.Rows.Clear();
+
+            foreach (var u in insurancePolicies)
+            {
+                string[] row =
+                {
+                    @$"{string.Join(' ',  
+                        u.DriverLicence.Driver.Surname, 
+                        u.DriverLicence.Driver.Name,
+                        u.DriverLicence.Driver.Patronymic)}",
+                    $"{u.TransportVehicle.LicencePlate}", $"{u.StartDate}", $"{u.EndDate}", $"{u.InsuranseSum}"
                 };
 
                 dataGridView3.Rows.Add(row);

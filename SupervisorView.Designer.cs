@@ -84,6 +84,7 @@
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button7 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.violationsGrid = new System.Windows.Forms.DataGridView();
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -101,6 +102,10 @@
             this.Column25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -115,6 +120,7 @@
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -173,7 +179,7 @@
             this.seriesNumberRadio.Location = new System.Drawing.Point(287, 24);
             this.seriesNumberRadio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.seriesNumberRadio.Name = "seriesNumberRadio";
-            this.seriesNumberRadio.Size = new System.Drawing.Size(216, 29);
+            this.seriesNumberRadio.Size = new System.Drawing.Size(157, 26);
             this.seriesNumberRadio.TabIndex = 25;
             this.seriesNumberRadio.TabStop = true;
             this.seriesNumberRadio.Text = "Серия и номер";
@@ -185,7 +191,7 @@
             this.birthTownRadio.Location = new System.Drawing.Point(155, 54);
             this.birthTownRadio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.birthTownRadio.Name = "birthTownRadio";
-            this.birthTownRadio.Size = new System.Drawing.Size(239, 29);
+            this.birthTownRadio.Size = new System.Drawing.Size(174, 26);
             this.birthTownRadio.TabIndex = 24;
             this.birthTownRadio.TabStop = true;
             this.birthTownRadio.Text = "Место рождения";
@@ -197,7 +203,7 @@
             this.patronymicRadio.Location = new System.Drawing.Point(138, 24);
             this.patronymicRadio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.patronymicRadio.Name = "patronymicRadio";
-            this.patronymicRadio.Size = new System.Drawing.Size(151, 29);
+            this.patronymicRadio.Size = new System.Drawing.Size(110, 26);
             this.patronymicRadio.TabIndex = 23;
             this.patronymicRadio.TabStop = true;
             this.patronymicRadio.Text = "Отчество";
@@ -209,7 +215,7 @@
             this.nameRadio.Location = new System.Drawing.Point(8, 24);
             this.nameRadio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.nameRadio.Name = "nameRadio";
-            this.nameRadio.Size = new System.Drawing.Size(92, 29);
+            this.nameRadio.Size = new System.Drawing.Size(67, 26);
             this.nameRadio.TabIndex = 21;
             this.nameRadio.TabStop = true;
             this.nameRadio.Text = "Имя";
@@ -221,7 +227,7 @@
             this.surnameRadio.Location = new System.Drawing.Point(8, 54);
             this.surnameRadio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.surnameRadio.Name = "surnameRadio";
-            this.surnameRadio.Size = new System.Drawing.Size(151, 29);
+            this.surnameRadio.Size = new System.Drawing.Size(110, 26);
             this.surnameRadio.TabIndex = 22;
             this.surnameRadio.TabStop = true;
             this.surnameRadio.Text = "Фамилия";
@@ -403,7 +409,7 @@
             this.issuerRadio.Location = new System.Drawing.Point(138, 24);
             this.issuerRadio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.issuerRadio.Name = "issuerRadio";
-            this.issuerRadio.Size = new System.Drawing.Size(287, 29);
+            this.issuerRadio.Size = new System.Drawing.Size(209, 26);
             this.issuerRadio.TabIndex = 25;
             this.issuerRadio.TabStop = true;
             this.issuerRadio.Text = "Орган, выдавший ВУ";
@@ -415,7 +421,7 @@
             this.ragionRadio.Location = new System.Drawing.Point(138, 57);
             this.ragionRadio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ragionRadio.Name = "ragionRadio";
-            this.ragionRadio.Size = new System.Drawing.Size(125, 29);
+            this.ragionRadio.Size = new System.Drawing.Size(91, 26);
             this.ragionRadio.TabIndex = 24;
             this.ragionRadio.TabStop = true;
             this.ragionRadio.Text = "Регион";
@@ -427,7 +433,7 @@
             this.driverIdRadio.Location = new System.Drawing.Point(8, 21);
             this.driverIdRadio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.driverIdRadio.Name = "driverIdRadio";
-            this.driverIdRadio.Size = new System.Drawing.Size(103, 29);
+            this.driverIdRadio.Size = new System.Drawing.Size(75, 26);
             this.driverIdRadio.TabIndex = 21;
             this.driverIdRadio.TabStop = true;
             this.driverIdRadio.Text = "ФИО";
@@ -439,7 +445,7 @@
             this.townRadio.Location = new System.Drawing.Point(8, 54);
             this.townRadio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.townRadio.Name = "townRadio";
-            this.townRadio.Size = new System.Drawing.Size(110, 29);
+            this.townRadio.Size = new System.Drawing.Size(80, 26);
             this.townRadio.TabIndex = 22;
             this.townRadio.TabStop = true;
             this.townRadio.Text = "Город";
@@ -592,7 +598,7 @@
             // GetCars
             // 
             this.GetCars.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.GetCars.Location = new System.Drawing.Point(1034, 85);
+            this.GetCars.Location = new System.Drawing.Point(4, 3);
             this.GetCars.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.GetCars.Name = "GetCars";
             this.GetCars.Size = new System.Drawing.Size(252, 76);
@@ -684,6 +690,7 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.LightBlue;
+            this.tabPage4.Controls.Add(this.button7);
             this.tabPage4.Controls.Add(this.button4);
             this.tabPage4.Controls.Add(this.violationsGrid);
             this.tabPage4.Location = new System.Drawing.Point(4, 31);
@@ -693,10 +700,20 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Нарушения";
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(3, 3);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(148, 61);
+            this.button7.TabIndex = 2;
+            this.button7.Text = "Добавить нарушение";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button4.Location = new System.Drawing.Point(945, 66);
+            this.button4.Location = new System.Drawing.Point(4, 70);
             this.button4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(330, 62);
@@ -780,6 +797,8 @@
             // tabPage5
             // 
             this.tabPage5.BackColor = System.Drawing.Color.LightBlue;
+            this.tabPage5.Controls.Add(this.textBox3);
+            this.tabPage5.Controls.Add(this.groupBox3);
             this.tabPage5.Controls.Add(this.button2);
             this.tabPage5.Controls.Add(this.dataGridView3);
             this.tabPage5.Location = new System.Drawing.Point(4, 31);
@@ -792,10 +811,10 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(989, 98);
+            this.button2.Location = new System.Drawing.Point(11, 76);
             this.button2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(314, 55);
+            this.button2.Size = new System.Drawing.Size(314, 43);
             this.button2.TabIndex = 1;
             this.button2.Text = "Получить все полисы";
             this.button2.UseVisualStyleBackColor = true;
@@ -814,12 +833,12 @@
             this.Column23,
             this.Column24,
             this.Column25});
-            this.dataGridView3.Location = new System.Drawing.Point(11, 162);
+            this.dataGridView3.Location = new System.Drawing.Point(11, 125);
             this.dataGridView3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidth = 51;
             this.dataGridView3.RowTemplate.Height = 29;
-            this.dataGridView3.Size = new System.Drawing.Size(1291, 205);
+            this.dataGridView3.Size = new System.Drawing.Size(1291, 242);
             this.dataGridView3.TabIndex = 0;
             // 
             // Column21
@@ -877,6 +896,53 @@
             this.toolStripMenuItem1.Text = "Выйти";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(11, 4);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.PlaceholderText = "Введите";
+            this.textBox3.Size = new System.Drawing.Size(209, 30);
+            this.textBox3.TabIndex = 27;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.radioButton3);
+            this.groupBox3.Controls.Add(this.radioButton4);
+            this.groupBox3.Location = new System.Drawing.Point(249, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.groupBox3.Size = new System.Drawing.Size(291, 53);
+            this.groupBox3.TabIndex = 26;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Параметры поиска";
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(9, 21);
+            this.radioButton3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(75, 26);
+            this.radioButton3.TabIndex = 21;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "ФИО";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(104, 21);
+            this.radioButton4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(132, 26);
+            this.radioButton4.TabIndex = 22;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "Гос. номера";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
             // SupervisorView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
@@ -911,9 +977,12 @@
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.violationsGrid)).EndInit();
             this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -986,5 +1055,10 @@
         private DataGridViewTextBoxColumn Column23;
         private DataGridViewTextBoxColumn Column24;
         private DataGridViewTextBoxColumn Column25;
+        private Button button7;
+        private TextBox textBox3;
+        private GroupBox groupBox3;
+        private RadioButton radioButton3;
+        private RadioButton radioButton4;
     }
 }

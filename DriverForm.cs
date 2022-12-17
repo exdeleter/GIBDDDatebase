@@ -28,6 +28,9 @@ namespace GIBDDDatebase
             }
             
             _driverId = driver.Id;
+
+            GetInsurancePolicy();
+            GetViolations();
         }
 
         private void DriverForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -45,59 +48,80 @@ namespace GIBDDDatebase
 
         private async void GetInsurancePolicy()
         {
-            await using var ap = new ApplicationContext();
-            
-            var insurances = await ap.InsurancePolicies
-                .Include(x => x.TransportVehicle)
-                .Include(x => x.DriverLicence)
-                .Where(x => x.DriverLicence.DriverId == _driverId)
-                .ToListAsync();
-
-            dataGridView1.Rows.Clear();
-            
-            foreach (var insurance in insurances)
+            using (var ap = new ApplicationContext())
             {
-                string[] row =
-                {
-                    $"{insurance.TransportVehicle.Model}",
-                    $"{insurance.TransportVehicle.LicencePlate}",
-                    $"{insurance.StartDate}",
-                    $"{insurance.EndDate}",
-                    $"{insurance.InsuranseSum}"
-                };
+                var insurances = await ap.InsurancePolicies
+                    .Include(x => x.TransportVehicle)
+                    .Include(x => x.DriverLicence)
+                    .Where(x => x.DriverLicence.DriverId == _driverId)
+                    .ToListAsync();
 
-                dataGridView1.Rows.Add(row);
+                dataGridView1.Rows.Clear();
+
+                foreach (var insurance in insurances)
+                {
+                    string[] row =
+                    {
+                        $"{insurance.TransportVehicle.Model}",
+                        $"{insurance.TransportVehicle.LicencePlate}",
+                        $"{insurance.StartDate}",
+                        $"{insurance.EndDate}",
+                        $"{insurance.InsuranseSum}"
+                    };
+
+                    dataGridView1.Rows.Add(row);
+                }
             }
         }
         
         private async void GetViolations()
         {
-            await using var ap = new ApplicationContext();
-            
-            var viols = await ap.Incidents
-                .Include(x => x.Violation)
-                .Include(x => x.TransportVehicle)
-                .Where(x => x.DriverId == _driverId)
-                .OrderByDescending(x => x.Date)
-                .ToListAsync();
-
-            dataGridView2.Rows.Clear();
-            
-            foreach (var viol in viols)
+            using (var ap = new ApplicationContext())
             {
-                string[] row =
-                {
-                    $"{viol.TransportVehicle.Model}",
-                    $"{viol.TransportVehicle.LicencePlate}",
-                    $"{viol.Date}",
-                    $"{viol.Description}",
-                    $"{viol.Violation.Name}",
-                    $"{viol.Violation.Fine}",
-                    $"{viol.RepaymentDate}",
-                };
+                var viols = await ap.Incidents
+                    .Include(x => x.Violation)
+                    .Include(x => x.TransportVehicle)
+                    .Where(x => x.DriverId == _driverId)
+                    .OrderByDescending(x => x.Date)
+                    .ToListAsync();
 
-                dataGridView2.Rows.Add(row);
+                dataGridView2.Rows.Clear();
+
+                foreach (var viol in viols)
+                {
+                    string[] row =
+                    {
+                        $"{viol.Id}",
+                        $"{viol.TransportVehicle.Model}",
+                        $"{viol.TransportVehicle.LicencePlate}",
+                        $"{viol.Date}",
+                        $"{viol.Description}",
+                        $"{viol.Violation.Name}",
+                        $"{viol.Violation.Fine}",
+                        $"{viol.RepaymentDate}",
+                    };
+
+                    dataGridView2.Rows.Add(row);
+                }
             }
+        }
+
+        private void dataGridView2_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int selRowNum = dataGridView2.CurrentCell.RowIndex;
+
+            var selectedId = dataGridView2.Rows[selRowNum].Cells[0].Value.ToString();
+
+            PaymentForm payment = new PaymentForm();
+
+            payment.GetReceipt(int.Parse(selectedId));
+
+            payment.ShowDialog();
+        }
+
+        private void tabControl1_MouseClick(object sender, MouseEventArgs e)
+        {
+            GetViolations();
         }
     }
 }

@@ -117,7 +117,7 @@ namespace GIBDDDatebase
 
             foreach (var inc in incidents)
             {
-                string[] row = { 
+                string[] row = {
                     $"{string.Join(' ', inc.Driver.Surname, inc.Driver.Name, inc.Driver.Patronymic)}",
                     $"{inc.TransportVehicle.LicencePlate}", 
                     $"{inc.Date}",
@@ -369,6 +369,13 @@ namespace GIBDDDatebase
 
                 dataGridView3.Rows.Add(row);
             }
+        }
+
+        private void добавитьНовогоСотрудникаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new AddSupervisor();
+
+            form.ShowDialog();
         }
     }
 }
